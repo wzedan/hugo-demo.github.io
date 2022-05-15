@@ -12,13 +12,14 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-        with:
+        with:          
+          submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.91.2'
+          hugo-version: 'latest'
           extended: true
 
       - name: Build
